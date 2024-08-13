@@ -1,2 +1,13 @@
-# puptastic-ecommerce-frontend
-This is the frontend of my ecommerce website Puptastic. It is build with react and sells dog appeal.
+# Puptastic Frontend
+
+## Pages
+
+- Home
+- Products
+- Products/:id
+- Contact
+- Privacy
+- Terms & Conditions
+- Wholesale
+
+## Components
