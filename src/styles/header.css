@@ -1,0 +1,32 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 80px;
+    padding: 0px 4%;
+    background-color: #fff;
+    border-bottom: 1px solid #ddd; 
+}
+
+.cartIcon {
+width: 34px;
+height: 34px;
+cursor: pointer; 
+}
+
+.headerBanner {
+display: flex;
+justify-content: center;
+align-items: center;
+background-color: #f8f9fa;
+padding: 10px 0px; 
+border-bottom: 1px solid #ddd; 
+width: 100%; 
+}
+
+.headerBanner p {
+margin: 0; 
+color: #333; 
+font-size: 16px;
+font-weight: bold;
+}

@@ -7,6 +7,8 @@ import AllProductsPage from "./pages/AllProductsPage";
 import SingleProductPage from "./pages/SingleProductPage";
 import Cart from "./pages/Cart";
 import PageNotFound from "./pages/PageNotFound";
+import About from "./pages/About";
+import Contact from "./pages/Contact";
 
 function App() {
   return (
@@ -15,9 +17,11 @@ function App() {
         <Route index element={<Homepage />} />
         <Route path="privacy" element={<PrivacyPage />} />
         <Route path="tos" element={<TosPage />} />
-        <Route path="products" element={<AllProductsPage />} />
-        <Route path="products/:productId" element={<SingleProductPage />} />
+        <Route path="shop" element={<AllProductsPage />} />
+        <Route path="shop/:productId" element={<SingleProductPage />} />
         <Route path="cart" element={<Cart />} />
+        <Route path="about" element={<About />} />
+        <Route path="contact" element={<Contact />} />
         <Route path="*" element={<PageNotFound />} />
       </Route>
     </Routes>
