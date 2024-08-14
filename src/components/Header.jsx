@@ -1,11 +1,13 @@
-import React, { useState } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import Hamburger from "./Hamburger";
 import "../styles/header.css";
 import shoppingCart from "../assets/shoppingCart.svg";
+import { useCart } from "../context/CartContext";
 
 const Header = () => {
-  const [itemsInCart, setItemsInCart] = useState(1);
+  const { state } = useCart();
+  const { items } = state;
 
   const bannerText = "Welcome To Puptastic Petstore!";
 
@@ -17,7 +19,9 @@ const Header = () => {
         <Link to="/cart" className="cartLink">
           <div className="cartContainer">
             <img src={shoppingCart} alt="Cart" className="cartIcon" />
-            {itemsInCart > 0 && <div className="cartCount">{itemsInCart}</div>}
+            {items.length > 0 && (
+              <div className="cartCount">{items.length}</div>
+            )}
           </div>
         </Link>
       </div>
