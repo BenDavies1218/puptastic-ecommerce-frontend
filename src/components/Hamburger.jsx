@@ -22,6 +22,11 @@ const Hamburger = () => {
       <div className={`hamburgerMenuContainer ${active ? "active" : ""}`}>
         <ul className="hamburgerMenu">
           <li>
+            <Link to="/" onClick={handleLinkClick}>
+              Home
+            </Link>
+          </li>
+          <li>
             <Link to="/shop" onClick={handleLinkClick}>
               Shop
             </Link>
