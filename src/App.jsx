@@ -16,7 +16,7 @@ function App() {
       <Route path="/" element={<Template />}>
         <Route index element={<Homepage />} />
         <Route path="privacy" element={<PrivacyPage />} />
-        <Route path="tos" element={<TosPage />} />
+        <Route path="terms-&-conditions" element={<TosPage />} />
         <Route path="shop" element={<AllProductsPage />} />
         <Route path="shop/:productId" element={<SingleProductPage />} />
         <Route path="cart" element={<Cart />} />

@@ -1,0 +1,50 @@
+/* Carousel Container */
+.carousel-container {
+    width: 100%;
+    overflow: hidden; /* Hide overflow */
+    position: relative; /* Necessary for navigation controls */
+    padding: 20px 0;
+  }
+  
+  /* Carousel */
+  .carousel {
+    display: flex;
+    flex-wrap: nowrap; /* Prevent items from wrapping */
+    overflow-x: auto; /* Enable horizontal scrolling */
+    scroll-behavior: smooth; /* Smooth scrolling */
+  }
+  
+  /* Product Item */
+  .carousel .ProductItemContainer {
+    min-width: 200px; /* Adjust width as needed */
+    margin-right: 16px; /* Space between items */
+    flex: 0 0 auto; /* Prevent shrinking */
+    background-color: #f8f8f8; /* Light gray background */
+    border-radius: 8px; /* Rounded corners */
+    padding: 16px; /* Padding inside the product item */
+  }
+  
+  /* Hide scrollbar */
+  .carousel::-webkit-scrollbar {
+    display: none;
+  }
+  
+  /* Optional: Navigation Buttons */
+  .carousel-container .nav-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+  }
+  
+  .carousel-container .prev-button {
+    left: 10px;
+  }
+  
+  .carousel-container .next-button {
+    right: 10px;
+  }

@@ -8,6 +8,5 @@
 - Contact
 - Privacy
 - Terms & Conditions
-- Wholesale
 
 ## Components
