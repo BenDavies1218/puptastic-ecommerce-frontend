@@ -1,27 +1,41 @@
 /* Carousel Container */
 .carousel-container {
+    
     width: 100%;
-    overflow: hidden; /* Hide overflow */
-    position: relative; /* Necessary for navigation controls */
+    overflow: hidden;
+    position: relative;
     padding: 20px 0;
+
+    h4 {
+      text-align: center;
+      background-color: rgba(88, 159, 170, 0.8);
+      border-radius: 8px; 
+      padding: 16px;
+      text-decoration: underline;
+    }
   }
   
   /* Carousel */
   .carousel {
     display: flex;
-    flex-wrap: nowrap; /* Prevent items from wrapping */
-    overflow-x: auto; /* Enable horizontal scrolling */
-    scroll-behavior: smooth; /* Smooth scrolling */
+    flex-wrap: nowrap; 
+    overflow-x: auto;
+    scroll-behavior: smooth;
   }
   
   /* Product Item */
   .carousel .ProductItemContainer {
-    min-width: 200px; /* Adjust width as needed */
-    margin-right: 16px; /* Space between items */
-    flex: 0 0 auto; /* Prevent shrinking */
-    background-color: #f8f8f8; /* Light gray background */
-    border-radius: 8px; /* Rounded corners */
-    padding: 16px; /* Padding inside the product item */
+    min-width: 200px;
+    margin-right: 16px;
+    flex: 0 0 auto; 
+    background-color: rgba(88, 159, 170, 0.8);
+    border-radius: 8px; 
+    padding: 16px; 
+
+    img {
+      width: 200px;
+      height: 200px;
+    }
   }
   
   /* Hide scrollbar */
@@ -32,7 +46,7 @@
   /* Optional: Navigation Buttons */
   .carousel-container .nav-button {
     position: absolute;
-    top: 50%;
+    top: 60%;
     transform: translateY(-50%);
     background-color: rgba(0, 0, 0, 0.5);
     color: white;

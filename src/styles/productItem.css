@@ -1,0 +1,46 @@
+.buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.buttons button {
+    background-color: rgba(0, 0, 0, 0.8); 
+    color: #fff; 
+    border: none; 
+    border-radius: 5px; 
+    font-size: 16px; 
+    font-weight: bold; 
+    padding: 10px 15px;
+    cursor: pointer; 
+    transition: background-color 0.3s ease, color 0.3s ease; 
+}
+
+.buttons button:hover {
+    background-color: #0056b3; 
+    color: #fff; 
+}
+
+.buttons button:focus {
+    outline: none; 
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+.buttons button:active {
+    background-color: #004080; 
+    color: #fff; 
+}
+
+.itemReviews {
+    display: flex;
+    justify-content: left;
+    gap: 5px;
+}
+
+.ItemContainer {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 10px;
+}

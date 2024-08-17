@@ -1,25 +1,25 @@
-
-
+.footer {
+    background-color: white;
+    text-align: center;
+    p {
+        font-size: 10px;
+    }
+}
 .footerContainer {
     padding-right: 5%;
-    width: 100vdw;
+    width: 100vw; 
     display: flex;
     justify-content: space-around;
     align-items: center;
+    padding: 20px 0; 
+
+    img {
+        width: 100px; 
+        height: 100px; 
+    }
 }
 
-.footerLeftSide {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 10px;
-    font-size: 12px;
-}
-
-
+.footerLeftSide,
 .footerRightSide {
     flex: 1;
     display: flex;
@@ -32,9 +32,8 @@
 }
 
 .footerLogo {
-    flex: 1;
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 50px;
 }
+
