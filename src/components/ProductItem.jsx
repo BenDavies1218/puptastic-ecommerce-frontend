@@ -1,22 +1,26 @@
-import React from "react";
+/* eslint-disable react/prop-types */
 import AddToCartButton from "./AddToCartButton";
-import ProductImage from "../assets/9-min.png";
 import StarRating from "./StarRating";
 import "../styles/productItem.css";
 
-const ProductItem = (props) => {
+const ProductItem = ({ product }) => {
+  const { mainImageUrl, name, rating, imgAlt = "Product Image" } = product;
+
   return (
     <div className="ProductItemContainer">
       <div className="ItemContainer">
-        <img src={props.imgUrl || ProductImage} alt={props.imgAlt} />
-        <div>{props.name}</div>
+        <img
+          src={mainImageUrl || "../assets/9-min.png"}
+          alt={imgAlt}
+        />
+        <div>{name}</div>
         <div className="itemReviews">
-          <StarRating rating={props.rating || 0} />
-          <div className="itemRating">{props.rating || 0} / 5</div>
+          <StarRating rating={rating || 0} />
+          <div className="itemRating">{rating || 0} / 5</div>
         </div>
         <div className="buttons">
           <button>View</button>
-          <AddToCartButton />
+          <AddToCartButton item={product} />
         </div>
       </div>
     </div>

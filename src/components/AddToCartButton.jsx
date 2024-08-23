@@ -1,10 +1,18 @@
+/* eslint-disable react/prop-types */
 import { useCart } from "../context/CartContext";
 
 const AddToCartButton = ({ item }) => {
   const { addItem } = useCart();
 
   const handleAddToCart = () => {
-    addItem(item);
+    
+    const itemWithId = {
+      id: item._id,
+      name: item.name,
+      price: item.price,
+      quantity: 1,
+    };
+    addItem(itemWithId);
   };
 
   return <button onClick={handleAddToCart}>Add to Cart</button>;

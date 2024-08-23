@@ -1,4 +1,6 @@
-import React, { createContext, useReducer, useContext } from "react";
+/* eslint-disable react/prop-types */
+/* eslint-disable react-refresh/only-export-components */
+import { createContext, useReducer, useContext } from "react";
 
 // Create a context for the cart
 const CartContext = createContext();
@@ -17,7 +19,7 @@ const cartReducer = (state, action) => {
   switch (action.type) {
     case ADD_ITEM:
       // Check if the item already exists in the cart
-      const existingItemIndex = state.items.findIndex(
+      { const existingItemIndex = state.items.findIndex(
         (item) => item.id === action.payload.id
       );
       if (existingItemIndex >= 0) {
@@ -30,7 +32,7 @@ const cartReducer = (state, action) => {
         return { ...state, items: updatedItems };
       }
       // Add new item to the cart
-      return { ...state, items: [...state.items, action.payload] };
+      return { ...state, items: [...state.items, action.payload] }; }
     case REMOVE_ITEM:
       // Remove item from the cart
       return {
