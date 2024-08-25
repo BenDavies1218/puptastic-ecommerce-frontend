@@ -1,64 +1,95 @@
 /* Carousel Container */
 .carousel-container {
-    
-    width: 100%;
-    overflow: hidden;
-    position: relative;
-    padding: 20px 0;
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  padding: 20px 0;
 
-    h4 {
-      text-align: center;
-      background-color: rgba(88, 159, 170, 0.8);
-      border-radius: 8px; 
-      padding: 16px;
-      text-decoration: underline;
-    }
+  h4 {
+    margin-left: 10px;
+    text-align: left;
+    color: black;
+    font-size: 22px;
+    padding: 8px;
+    text-decoration: none;
   }
-  
-  /* Carousel */
-  .carousel {
+}
+
+/* Carousel */
+.carousel {
+  display: flex;
+  flex-wrap: nowrap; 
+  overflow-x: auto;
+  scroll-behavior: smooth;
+}
+
+/* Product Item */
+.carousel .ProductItemContainer {
+  min-width: 200px;
+  max-width: 200px;
+  height: fit-content;
+  margin-right: 16px;
+  flex: 0 0 auto; 
+  background-color: rgba(86, 86, 86, 0.501);
+  border-radius: 8px; 
+  padding: 16px;
+
+  img {
+    width: 200px;
+    height: 200px;
+  }
+
+  .ItemContainer {
     display: flex;
-    flex-wrap: nowrap; 
-    overflow-x: auto;
-    scroll-behavior: smooth;
-  }
-  
-  /* Product Item */
-  .carousel .ProductItemContainer {
-    min-width: 200px;
-    margin-right: 16px;
-    flex: 0 0 auto; 
-    background-color: rgba(88, 159, 170, 0.8);
-    border-radius: 8px; 
-    padding: 16px; 
-
-    img {
-      width: 200px;
-      height: 200px;
+    flex-direction: column;
+    align-items: center;
+    
+    .description {
+      height: 100px;
+      overflow-y: scroll;
+      width: 100%; /* Ensures the description takes up the full width of the parent */
+      text-align: center;
+      font-size: 16px;
+      word-wrap: break-word; /* Ensures long words break to fit the container */
+      margin-top: 8px; /* Optional: adds space between name and description */
     }
+
+    .priceContainer {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+      .price {
+        font-size: 16px;
+        text-decoration: line-through;
+      }
+    }
+
+    
   }
-  
-  /* Hide scrollbar */
-  .carousel::-webkit-scrollbar {
-    display: none;
-  }
-  
-  /* Optional: Navigation Buttons */
-  .carousel-container .nav-button {
-    position: absolute;
-    top: 60%;
-    transform: translateY(-50%);
-    background-color: rgba(0, 0, 0, 0.5);
-    color: white;
-    border: none;
-    padding: 10px;
-    cursor: pointer;
-  }
-  
-  .carousel-container .prev-button {
-    left: 10px;
-  }
-  
-  .carousel-container .next-button {
-    right: 10px;
-  }
+}
+
+/* Hide scrollbar */
+.carousel::-webkit-scrollbar {
+  display: none;
+}
+
+/* Optional: Navigation Buttons */
+.carousel-container .nav-button {
+  position: absolute;
+  top: 60%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.carousel-container .prev-button {
+  left: 10px;
+}
+
+.carousel-container .next-button {
+  right: 10px;
+}

@@ -7,7 +7,7 @@ import puptasticLogo from "../assets/Puptastic Logo Transparent.png";
 import { useCart } from "../context/CartContext";
 
 const Header = () => {
-  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 920);
   const { state } = useCart();
   const { items } = state;
 
@@ -15,13 +15,16 @@ const Header = () => {
 
   useEffect(() => {
     const handleResize = () => {
-      setIsMobile(window.innerWidth <= 768);
+      setIsMobile(window.innerWidth <= 920);
     };
     window.addEventListener("resize", handleResize);
     return () => {
       window.removeEventListener("resize", handleResize);
     };
   }, []);
+
+  // Calculate the total quantity of items in the cart
+  const totalQuantity = items.reduce((acc, item) => acc + item.quantity, 0);
 
   return (
     <>
@@ -40,8 +43,8 @@ const Header = () => {
         <Link to="/cart" className="cartLink">
           <div className="cartContainer">
             <img src={shoppingCart} alt="Cart" className="cartIcon" />
-            {items.length > 0 && (
-              <div className="cartCount">{items.length}</div>
+            {totalQuantity > 0 && (
+              <div className="cartCount">{totalQuantity}</div>
             )}
           </div>
         </Link>

@@ -22,12 +22,19 @@ const Homepage = () => {
   }, []);
 
   return (
-    <div className="HomepageContainer">
-      <div className="homePageHeading">
-        <h5>Welcome to Puptastic Petstore!</h5>
+    <div className="homePage">
+      <div className="HomepageContainer">
+        <div className="homePageHeading">
+          <h5>Welcome to Puptastic Petstore!</h5>
+        </div>
+        
+      </div>
+      <HomePageCarosel name="Dog Backpacks" products={products.products} />
+      <HomePageCarosel name="Harnesses" products={exampleItems} />
+      <div className="bottomTextContainer">
         <h6>
-          Browse our extensive range of dog accessories and apparel! We pride
-          ourselves on products that are...
+            Browse our extensive range of dog accessories and apparel! We pride
+            ourselves on products that are...
         </h6>
         <ul>
           <li>Adjustable design with various sizes to suit most dogs</li>
@@ -36,11 +43,6 @@ const Homepage = () => {
           <li>We offer fast shipping on all orders</li>
         </ul>
       </div>
-      <HomePageCarosel name="Dog Backpacks" products={products.products} />
-      <HomePageCarosel name="Harnesses" products={exampleItems} />
-      <HomePageCarosel name="Toys" products={exampleItems} />
-      <HomePageCarosel name="Supplements" products={exampleItems} />
-      <HomePageCarosel name="Treats" products={exampleItems} />
     </div>
   );
 };

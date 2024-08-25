@@ -10,6 +10,8 @@ const AddToCartButton = ({ item }) => {
       id: item._id,
       name: item.name,
       price: item.price,
+      image: item.mainImageUrl,
+      description: item.description,
       quantity: 1,
     };
     addItem(itemWithId);
