@@ -1,4 +1,3 @@
-/* eslint-disable react/prop-types */
 /* eslint-disable no-case-declarations */
 /* eslint-disable react-refresh/only-export-components */
 import { createContext, useReducer, useContext, useEffect } from "react";
@@ -14,7 +13,12 @@ const LOAD_CART = "LOAD_CART";
 // Define the initial state for the cart
 const initialState = {
   items: JSON.parse(localStorage.getItem("cartItems")) || [],
+  total: 0,
 };
+
+// Utility function to calculate the total
+const calculateTotal = (items) =>
+  items.reduce((total, item) => total + item.price * item.quantity, 0);
 
 // Define a reducer function to handle cart actions
 const cartReducer = (state, action) => {
@@ -23,31 +27,30 @@ const cartReducer = (state, action) => {
       const existingItemIndex = state.items.findIndex(
         (item) => item.id === action.payload.id
       );
+      let updatedItems;
       if (existingItemIndex >= 0) {
         // Update quantity if item already exists
-        const updatedItems = state.items.map((item, index) =>
+        updatedItems = state.items.map((item, index) =>
           index === existingItemIndex
             ? { ...item, quantity: item.quantity + action.payload.quantity }
             : item
         );
-        return { ...state, items: updatedItems };
+      } else {
+        // Add new item to the cart
+        updatedItems = [...state.items, action.payload];
       }
-      // Add new item to the cart
-      return { ...state, items: [...state.items, action.payload] };
-    
+      return { ...state, items: updatedItems, total: calculateTotal(updatedItems) };
+
     case REMOVE_ITEM:
       // Remove item from the cart
-      return {
-        ...state,
-        items: state.items.filter((item) => item.id !== action.payload.id),
-      };
+      const filteredItems = state.items.filter(
+        (item) => item.id !== action.payload.id
+      );
+      return { ...state, items: filteredItems, total: calculateTotal(filteredItems) };
 
     case LOAD_CART:
       // Load cart from localStorage
-      return {
-        ...state,
-        items: action.payload,
-      };
+      return { ...state, items: action.payload, total: calculateTotal(action.payload) };
 
     default:
       return state;

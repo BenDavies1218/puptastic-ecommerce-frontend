@@ -37,6 +37,7 @@
     display: flex;
     align-items: center;
     justify-content: flex-start;
+    padding: 10px;
 }
 
 /* Applying styles only to the Back button */

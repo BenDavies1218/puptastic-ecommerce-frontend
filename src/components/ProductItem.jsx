@@ -9,7 +9,6 @@ const ProductItem = ({ product }) => {
   const navigate = useNavigate();
 
   const handleViewClick = () => {
-    console.log("View clicked");
     navigate(`/shop/${product._id}`, { state: { product } });
   };
 
@@ -34,7 +33,7 @@ const ProductItem = ({ product }) => {
         </div>
         <strong>SALE! </strong>
         <div className="buttons">
-          <button onClick={handleViewClick}>View</button> {/* Corrected the onClick event */}
+          <button onClick={handleViewClick}>View</button>
           <AddToCartButton item={product} />
         </div>
       </div>
